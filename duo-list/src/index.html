@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/build/duo-list.esm.js"></script>
+    <style>
+      body {
+        --duo-list-option-bg: white;
+        --dou-list-option-min-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <duo-list>
+    </duo-list>
+    <input onchange="handleChange(event)"></input>
+
+    <button onclick="printRight()" >Test</button>
+  </body>
+  <script>
+    const duoList = document.querySelector('duo-list');
+    duoList.value = {
+      leftOptions : [
+        {"value" : "Apple", "text" : "Apple"},
+        {"value" : "Bannana", "text" : "Bannana"},
+        {"value" : "Coconut", "text" : "Coconut"}
+      ],
+      rightOptions : [],
+      size: 10
+    }
+
+    duoList.addEventListener('valueChange', event => {
+      this.handleChange(event);
+    })
+
+      //rightOptions: Option[]
+      //size: number
+
+
+/*
+    duoList.unselected = [
+        {"value" : "1", "text" : "Apple"},
+        {"value" : "1", "text" : "Bananna"},
+        {"value" : "1", "text" : "Coconut"}
+      ]
+      */
+  </script>
+      <script>
+        function handleChange(e) {
+          const rightOptions = e.detail.rightOptions
+          console.log("change " + rightOptions);
+        }
+
+    </script>
+</html>

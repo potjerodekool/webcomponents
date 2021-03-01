@@ -1,0 +1,13 @@
+.duo-list {
+  display: flex;
+}
+
+.list {
+  overflow: auto;
+  margin: 1rem;
+  min-width: var(--dou-list-option-min-width, 5rem);
+}
+
+.duo-list-option {
+  background-color: var(--duo-list-option-bg, initial);
+}
